@@ -1,0 +1,15 @@
+version: "3.8"
+
+services:
+  private-mod-host:
+    build: .
+    container_name: private-mod-host
+    ports:
+      - "3000:3000"
+    environment:
+      - ADMIN_KEY=YourSecretHere
+      - PORT=3000
+    volumes:
+      - ./uploads:/app/uploads
+      - ./db.json:/app/db.json
+    restart: unless-stopped￼Enter
